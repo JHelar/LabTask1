@@ -44,7 +44,6 @@ class Graph:
         return LinkNode
 
     def getAllLinkedNodes(self, node):
-
         dummydummy = []
         dummyNodes = []
         dummyLinks = []
@@ -55,6 +54,7 @@ class Graph:
                 dummydummy.remove(node)
             for dummyD in dummydummy:
                 dummyNodes.append(dummyD)
+            del dummyD
             dummydummy.clear()
         del dummyL
         return dummyNodes
@@ -93,7 +93,6 @@ class Graph:
             H = H * -1
         return H
 
-
     def AStarSearch(self, locA, locB):
         dummyNodes = []
 
@@ -124,9 +123,7 @@ class Graph:
             for open in openList:
                 if open.HVal < v.HVal and open.beenSearched == False:
                     v = open
-
         closedList.append(v)
-
         return closedList 
 
 def ReadLinksFromFile(name):
